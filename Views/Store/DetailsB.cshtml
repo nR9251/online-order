@@ -1,0 +1,49 @@
+﻿@model IEnumerable<prjonlineorder.Models.TableB2>
+
+@{
+    ViewData["Title"] = "DetailsB";
+}
+
+<h1>DetailsB</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TMeal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TMeal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TPrice)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TNumber">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TNumber">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TNumber">Delete</a>
+                </td>
+            </tr>
+        }
+        <a asp-action="DeleteB">
+            <input id="b" type="button" value="結帳" style="width:90px;height:30px;font-size:20px;" />
+        </a>
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<prjonlineorder.Models.TableB1>
+
+@{
+    ViewData["Title"] = "customerA";
+}
+
+<h1>桌號：<b>1</b></h1>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TMeal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TMeal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TPrice)
+            </td>
+            <td>
+                <a asp-action="EditA" asp-route-id="@item.TNumber">
+                    <input id="A" type="button" value="我要點餐" style="width: 120px; height: 40px; font-size: 17px; border: none; background-color: #bcd4cf " />
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

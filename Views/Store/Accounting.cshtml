@@ -1,0 +1,38 @@
+﻿@model IEnumerable<prjonlineorder.Models.TableA>
+
+@{
+    ViewData["Title"] = "Accounting";
+}
+
+<h1>訂單系統</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TDesk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TTotal)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TDesk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TTotal)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

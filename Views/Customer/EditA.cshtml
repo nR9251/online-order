@@ -1,0 +1,40 @@
+﻿@model prjonlineorder.Models.TableB1
+
+@{
+    ViewData["Title"] = "更改數量";
+}
+
+<h1>更改數量</h1>
+
+<h4>桌號：<b>1</b></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditA">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TNumber" />
+            <div class="form-group">
+                @Html.DisplayFor(model => model.TMeal)
+                <input type="hidden" asp-for="TMeal" class="form-control" />
+                <span asp-validation-for="TMeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TNum" class="control-label"></label>
+                <input asp-for="TNum" class="form-control" value="0" min="0" max="20" />
+                <span asp-validation-for="TNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="TPrice" class="form-control" />
+                <span asp-validation-for="TPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="customerA">Back to List</a>
+</div>
+

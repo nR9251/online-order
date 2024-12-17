@@ -1,0 +1,32 @@
+﻿@model IEnumerable<prjonlineorder.Models.TableC>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>菜單</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TMeal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TPrice)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TMeal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TPrice)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
